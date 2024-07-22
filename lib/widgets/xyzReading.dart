@@ -21,14 +21,7 @@ class _XYZReadingState extends State<XYZReading> {
           builder: (context, magnitudeProvider, child) => Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Radio(
-                value: 1,
-                groupValue: magnitudeProvider.groupValue,
-                onChanged: (int? newValue) {
-                  magnitudeProvider.setUpdateInterval(1, Duration.microsecondsPerSecond ~/ 1);
-                },
-              ),
-              const Text("1 FPS"),
+              
               Radio(
                 value: 2,
                 groupValue: magnitudeProvider.groupValue,
@@ -37,14 +30,7 @@ class _XYZReadingState extends State<XYZReading> {
                 },
               ),
               const Text("30 FPS"),
-              Radio(
-                value: 3,
-                groupValue: magnitudeProvider.groupValue,
-                onChanged: (int? newValue) {
-                  magnitudeProvider.setUpdateInterval(3, Duration.microsecondsPerSecond ~/ 60);
-                },
-              ),
-              const Text("60 FPS"),
+             
             ],
           ),
         ),

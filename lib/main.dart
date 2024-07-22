@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       ChangeNotifierProvider(create: (context)=>MagnitudeProvider())
     ],
     child:MaterialApp(
+      
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
       

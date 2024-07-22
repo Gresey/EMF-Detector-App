@@ -24,7 +24,7 @@ class _MainReadingState extends State<MainReading> {
             
             children: [
               Container(
-                width: MediaQuery.of(context).size.width/2,
+                width: MediaQuery.of(context).size.width/3,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [Text(value.magnitude.toStringAsFixed(2),
@@ -34,7 +34,7 @@ class _MainReadingState extends State<MainReading> {
 
               ),
               Container(
-               width: MediaQuery.of(context).size.width/2,
+               width: MediaQuery.of(context).size.width/3,
                child: Row(
                 mainAxisAlignment:MainAxisAlignment.center,
                 children: [Text("uTesla",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),),

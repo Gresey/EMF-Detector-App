@@ -21,6 +21,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar:AppBar(title: Text("EMF Detector"),),
        backgroundColor: AppColors.primaryColor,
        body:Center(
         child: SingleChildScrollView(
