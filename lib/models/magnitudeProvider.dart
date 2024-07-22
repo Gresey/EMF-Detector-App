@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -16,6 +17,9 @@ class MagnitudeProvider extends ChangeNotifier {
   Vector3 _accelerator = Vector3.zero();
   Vector3 _absoluteOrientation2 = Vector3.zero();
   int? groupValue = 2;
+  
+  Timer? _timer;
+  int _updateInterval=100;
 
   MagnitudeProvider() {
     changeValues();
@@ -41,6 +45,7 @@ class MagnitudeProvider extends ChangeNotifier {
   }
 
   setUpdateInterval(int? groupValue, int interval) {
+  _updateInterval = interval;
      this.groupValue = groupValue;
     print(this.groupValue);
     notifyListeners();

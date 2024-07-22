@@ -1,6 +1,9 @@
 import 'package:emfdetector/models/magnitudeProvider.dart';
 
 import 'package:emfdetector/utils/colors.dart';
+import 'package:emfdetector/widgets/mainReading.dart';
+import 'package:emfdetector/widgets/meterReading.dart';
+import 'package:emfdetector/widgets/xyzReading.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -24,23 +27,23 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children:[
-                    // mainReading(),
-                    // XYZReading(),
-                    // MeterReading(),
+                    MainReading(),
+                    XYZReading(),
+                  MeterReading(),
                     Container(
                       height:50,
                       width:200,
                       child:ElevatedButton(
                         style: ButtonStyle(
-                          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                          shape: WidgetStateProperty.all(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(100),
-                            side: BorderSide(color: Colors.white)
+                            side: BorderSide(color: Colors.white),
                           )),
-                          backgroundColor: MaterialStateProperty.all(AppColors.primaryColor)
+                          backgroundColor: WidgetStateProperty.all(AppColors.primaryColor)
                         ),
                         onPressed: (){
                           //Navigator.push(context,MaterialPageRoute(builder: (context)=>Visuals()));
-                        }, child: Text("Visualize")
+                        }, child: Text("Visualize"),
                         ),
                     ),
                     SizedBox(height:10 ),
@@ -50,17 +53,17 @@ class _HomeState extends State<Home> {
                          height: 50,
                          child: ElevatedButton(
                           style: ButtonStyle(
-                            shape:MaterialStateProperty.all(
+                            shape:WidgetStateProperty.all(
                                     RoundedRectangleBorder(borderRadius: BorderRadius.circular(10),
                                     side: const BorderSide(color: Colors.white),
                                   ),
                                   
                             ),
-                              backgroundColor:MaterialStateProperty.all(AppColors.primaryColor)
+                              backgroundColor:WidgetStateProperty.all(AppColors.primaryColor)
                                 
                           ),
                           onPressed: (){
-                           // value.changeValues();
+                            value.changeValues();
                           }, child: Text("Start"),
                          ),
                       )
