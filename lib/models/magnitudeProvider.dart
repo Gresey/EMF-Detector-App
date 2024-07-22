@@ -25,29 +25,39 @@ class MagnitudeProvider extends ChangeNotifier {
     changeValues();
   }
 
-  changeValues() {
+  void changeValues() {
     magnetometerEventStream().listen((MagnetometerEvent event) {
-      magnetometer.setValues(event.x, event.y, event.z);
-
-      var matrix = getRotationMatrix(_accelerator, magnetometer);
-      _absoluteOrientation2.setFrom(getOrientation(matrix));
-
-      x = magnetometer.x;
-      y = magnetometer.y;
-      z = magnetometer.z;
-      magnitude = sqrt((pow(magnetometer.x, 2)) + (pow(magnetometer.y, 2)) + (pow(magnetometer.z, 2)));
-      values.add(LiveData(x, y, z, time++));
-      if (values.length > 40) {
-        values.removeAt(0);
+      if (_timer == null || !_timer!.isActive) {
+        _timer = Timer(Duration(milliseconds: _updateInterval), () {
+          _updateSensorValues(event);
+        });
       }
-      notifyListeners();
     });
   }
+
+  void _updateSensorValues(MagnetometerEvent event) {
+    magnetometer.setValues(event.x, event.y, event.z);
+
+    var matrix = getRotationMatrix(_accelerator, magnetometer);
+    _absoluteOrientation2.setFrom(getOrientation(matrix));
+
+    x = magnetometer.x;
+    y = magnetometer.y;
+    z = magnetometer.z;
+    magnitude = sqrt((pow(magnetometer.x, 2)) + (pow(magnetometer.y, 2)) + (pow(magnetometer.z, 2)));
+    values.add(LiveData(x, y, z, time++));
+    if (values.length > 40) {
+      values.removeAt(0);
+    }
+    notifyListeners();
+  }
+
 
   setUpdateInterval(int? groupValue, int interval) {
   _updateInterval = interval;
      this.groupValue = groupValue;
     print(this.groupValue);
+    changeValues();
     notifyListeners();
   }
 

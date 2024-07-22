@@ -1,4 +1,5 @@
 import 'package:emfdetector/models/magnitudeProvider.dart';
+import 'package:emfdetector/pages/visuals.dart';
 
 import 'package:emfdetector/utils/colors.dart';
 import 'package:emfdetector/widgets/mainReading.dart';
@@ -42,7 +43,7 @@ class _HomeState extends State<Home> {
                           backgroundColor: WidgetStateProperty.all(AppColors.primaryColor)
                         ),
                         onPressed: (){
-                          //Navigator.push(context,MaterialPageRoute(builder: (context)=>Visuals()));
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>visuals()));
                         }, child: Text("Visualize"),
                         ),
                     ),
