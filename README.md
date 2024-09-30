@@ -1,7 +1,5 @@
 
 
-
-
 # EMF Detector App
 
 ### Overview
@@ -28,9 +26,10 @@ The EMF Detector app is a sophisticated tool designed to measure and display ele
 2. **Data Processing**: The raw data from the sensor is processed to calculate the magnitude of the electromagnetic field.
 3. **UI Updates**: The processed data is then used to update the UI elements, including the radial gauge and the textual display of the EMF reading.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/e77f5b34-a2ed-4f4f-93b0-d490334af040" alt="Image 1" width="28%"height=500>
+  <img src="https://github.com/user-attachments/assets/e77f5b34-a2ed-4f4f-93b0-d490334af040" alt="Image 1" width="250"height=500>
+
   
-  <img src="https://github.com/user-attachments/assets/86453a94-e30b-4b71-8f35-9dc92b3f0449" alt="Image 2" width="28%" height=500>
+  <img src="https://github.com/user-attachments/assets/86453a94-e30b-4b71-8f35-9dc92b3f0449" alt="Image 2" width="250" height=500>
 </p>
 
 
